@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Testimonial.module.css";
 
-import StarRatings from "react-star-ratings";
+// import StarRatings from "react-star-ratings";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -14,7 +14,7 @@ const Testimonial = () => {
   const [slides, setSlides] = useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    fetch("https://dhaka-bus-ticket-server-two.vercel.app/all-feedback")
+    fetch("https://dhakabusserver.onrender.com/all-feedback")
       .then((res) => res.json())
       .then((data) => {
         setSlides(data?.result);
@@ -82,14 +82,14 @@ const Testimonial = () => {
                   {slide?.name}
                 </p>
                 <div>
-                  <StarRatings
+                  {/* <StarRatings
                     rating={parseInt(`${slide?.rating}`)}
                     starRatedColor="#FF4500"
                     starDimension="26px"
                     // changeRating={this.changeRating}
                     numberOfStars={5}
                     name="rating"
-                  />
+                  /> */}
                 </div>
               </div>
             </div>

@@ -26,14 +26,14 @@ const ContactForm = () => {
     event.preventDefault();
 
     console.log("Form Data:", formData);
-    fetch("https://dhaka-bus-ticket-server-two.vercel.app/contact-form", {
+    fetch("https://dhakabusserver.onrender.com/contact-form", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(formData),
     })
       .then((res) => res.json())
       .then((result) => {
-        // console.log(result);
+        console.log(result);
         event.target.reset();
         if (result.acknowledged === true) {
           Swal.fire("Good job!", "Your Message SuccessFully", "success");
